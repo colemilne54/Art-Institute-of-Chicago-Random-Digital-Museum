@@ -56,15 +56,15 @@ export default function App() {
       .then((data) => {
         console.log(data);
         getArt(data);
+        console.log(art.data[0]);
       })
       .catch((err) => {
         console.log(err.message);
-        console.log(ageUrl);
       });
   };
 
   function ArtCard() {
-    if (art.data > 0) {
+    if (art.data[0]) {
       return (
         <Card sx={{ maxWidth: 345 }}>
           <CardActionArea>
