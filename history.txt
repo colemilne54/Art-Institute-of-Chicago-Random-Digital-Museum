@@ -1,3 +1,5 @@
 510b3fec-6a75-af85-0d7f-2967ebc8c8e0
 8193894f-f5dd-632e-1e83-21df9258a7bf
 https://www.artic.edu/iiif/2/9295e23a-f231-297a-2323-0490b66ab51a
+https://www.artic.edu/iiif/2/d8f4d1e5-dff6-ee71-e1eb-455339cb9495/full/843,/0/default.jpg
+https://www.artic.edu/iiif/2/6cfd0ef5-c081-28d0-a173-01e632bbb684/full/843,/0/default.jpg

@@ -13,8 +13,6 @@ import './style.css';
 export default function App() {
   const [art, setArt] = useState([]);
 
-  console.log(art);
-
   const handleSubmit = (event) => {
     event.preventDefault();
     let timeStamp = Math.floor(Date.now() / 1000);
@@ -58,7 +56,6 @@ export default function App() {
       .then((data) => {
         console.log(data);
         setArt(data);
-        // console.log(art.data[0]);
       })
       .catch((err) => {
         console.log(err.message);
@@ -66,16 +63,21 @@ export default function App() {
   };
 
   function ArtCard() {
-    let link = `https://www.artic.edu/iiif/2/${art.data[0].image_id}/full/843,/0/default.jpg`;
-    console.log(link);
+    console.log(
+      `https://www.artic.edu/iiif/2/${art.data[0].image_id}/full/843,/0/default.jpg`
+    );
     return (
-      <Card sx={{ maxWidth: 345, mb: '50px' }}>
+      <Card sx={{ mb: '50px' }}>
         <CardMedia
+          sx={{ minHeight: 250 }}
           image={`https://www.artic.edu/iiif/2/${art.data[0].image_id}/full/843,/0/default.jpg`}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            image
+            {`Title: ${art.data[0].title}`}
+          </Typography>
+          <Typography gutterBottom variant="body2" component="text.secondary">
+            {`Artsist: ${art.data[0].artist_display}`}
           </Typography>
         </CardContent>
       </Card>
