@@ -1,11 +1,13 @@
-import { useState, React } from 'react';
+import React from 'react';
+import { useState } from 'react';
 import { Button } from '@mui/material';
 import './style.css';
 
 export default function App() {
   const [art, getArt] = useState([]);
 
-  function getRandomArt() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     let timeStamp = Math.floor(Date.now() / 1000);
     let artworkRequest = {
       resources: 'artworks',
@@ -38,11 +40,6 @@ export default function App() {
         },
       },
     };
-
-    // Query Art Insititue of Chicago API and return response
-  }
-
-  const handleSubmit = (event) => {
     fetch('https://api.artic.edu/api/v1/search', {
       method: 'POST',
       body: JSON.stringify(artworkRequest),
