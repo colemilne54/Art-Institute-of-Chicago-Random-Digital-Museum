@@ -11,7 +11,9 @@ import {
 import './style.css';
 
 export default function App() {
-  const [art, getArt] = useState([]);
+  const [art, setArt] = useState([]);
+
+  console.log(art);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -55,7 +57,7 @@ export default function App() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        getArt(data);
+        setArt(data);
         // console.log(art.data[0]);
       })
       .catch((err) => {
@@ -64,27 +66,20 @@ export default function App() {
   };
 
   function ArtCard() {
-    // if (art.data[0]) {
+    let link = `https://www.artic.edu/iiif/2/${art.data[0].image_id}/full/843,/0/default.jpg`;
+    console.log(link);
     return (
-      <Card sx={{ maxWidth: 345 }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            image={`https://www.artic.edu/iiif/2/' + ${art.data[0].image_id} + '/full/843,/0/default.jpg`}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Lizard
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
-            </Typography>
-          </CardContent>
-        </CardActionArea>
+      <Card sx={{ maxWidth: 345, mb: '50px' }}>
+        <CardMedia
+          image={`https://www.artic.edu/iiif/2/${art.data[0].image_id}/full/843,/0/default.jpg`}
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            image
+          </Typography>
+        </CardContent>
       </Card>
     );
-    // }
   }
 
   return (
@@ -99,7 +94,7 @@ export default function App() {
           Submit
         </Button>
       </form>
-      {art && <ArtCard />}
+      {art.length !== 0 && <ArtCard />}
     </div>
   );
 }
