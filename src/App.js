@@ -1,6 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
-import { Button } from '@mui/material';
+import {
+  Button,
+  Card,
+  CardActionArea,
+  Typography,
+  CardMedia,
+  CardContent,
+} from '@mui/material';
 import './style.css';
 
 export default function App() {
@@ -56,6 +63,30 @@ export default function App() {
       });
   };
 
+  function ArtCard() {
+    if (art.data > 0) {
+      return (
+        <Card sx={{ maxWidth: 345 }}>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              image={`https://www.artic.edu/iiif/2/' + ${art.data[0].image_id} + '/full/843,/0/default.jpg`}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Lizard
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Lizards are a widespread group of squamate reptiles, with over
+                6,000 species, ranging across all continents except Antarctica
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+      );
+    }
+  }
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -68,6 +99,7 @@ export default function App() {
           Submit
         </Button>
       </form>
+      <ArtCard />
     </div>
   );
 }
