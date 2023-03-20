@@ -56,7 +56,7 @@ export default function App() {
       .then((data) => {
         console.log(data);
         getArt(data);
-        console.log(art.data[0]);
+        // console.log(art.data[0]);
       })
       .catch((err) => {
         console.log(err.message);
@@ -64,27 +64,27 @@ export default function App() {
   };
 
   function ArtCard() {
-    if (art.data[0]) {
-      return (
-        <Card sx={{ maxWidth: 345 }}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              image={`https://www.artic.edu/iiif/2/' + ${art.data[0].image_id} + '/full/843,/0/default.jpg`}
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Lizard
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-      );
-    }
+    // if (art.data[0]) {
+    return (
+      <Card sx={{ maxWidth: 345 }}>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            image={`https://www.artic.edu/iiif/2/' + ${art.data[0].image_id} + '/full/843,/0/default.jpg`}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Lizard
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Lizards are a widespread group of squamate reptiles, with over
+              6,000 species, ranging across all continents except Antarctica
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    );
+    // }
   }
 
   return (
@@ -99,7 +99,7 @@ export default function App() {
           Submit
         </Button>
       </form>
-      <ArtCard />
+      {art && <ArtCard />}
     </div>
   );
 }
