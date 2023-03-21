@@ -3,7 +3,6 @@ import { useState } from 'react';
 import {
   Button,
   Card,
-  CardActionArea,
   Typography,
   CardMedia,
   CardContent,
@@ -85,7 +84,8 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div id="app-div">
+      <h1>Art Institute of Chicago Random Digital Museum</h1>
       <form onSubmit={handleSubmit}>
         <Button
           type="submit"
