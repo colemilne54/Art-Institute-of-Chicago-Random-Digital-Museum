@@ -15,6 +15,7 @@ export default function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     let timeStamp = Math.floor(Date.now() / 1000);
     let artworkRequest = {
       resources: 'artworks',
@@ -47,6 +48,7 @@ export default function App() {
         },
       },
     };
+
     fetch('https://api.artic.edu/api/v1/search', {
       method: 'POST',
       body: JSON.stringify(artworkRequest),
