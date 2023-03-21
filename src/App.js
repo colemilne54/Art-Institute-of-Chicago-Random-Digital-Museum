@@ -6,6 +6,7 @@ import {
   Typography,
   CardMedia,
   CardContent,
+  Grid,
 } from '@mui/material';
 import './style.css';
 
@@ -84,19 +85,26 @@ export default function App() {
   }
 
   return (
-    <div id="app-div">
+    <Grid
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      justifyContent="center"
+      style={{ minHeight: '100vh' }}
+    >
       <h1>Art Institute of Chicago Random Digital Museum</h1>
+      {art.length !== 0 && <ArtCard />}
       <form onSubmit={handleSubmit}>
         <Button
           type="submit"
           variant="contained"
           color="primary"
-          style={{ marginTop: 15 }}
+          style={{ marginTop: 5 }}
         >
           Submit
         </Button>
       </form>
-      {art.length !== 0 && <ArtCard />}
-    </div>
+    </Grid>
   );
 }
