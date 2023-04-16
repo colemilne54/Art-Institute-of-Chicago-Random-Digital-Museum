@@ -1,6 +1,6 @@
 # The Art Institute of Chicago Random Digital Museum
 
-This web app was built using ReactJS, MUI, and THE Art Institute of Chicago (ARTIC) API to create an interactive platform that displays random artwork from the Art Institute of Chicago's vast collection. The user interface is designed using Material-UI (MUI) components, which gives the app a sleek and modern look.
+This web app was built using ReactJS, MUI, and The Art Institute of Chicago (ARTIC) API to create an interactive platform that displays random artwork from the Art Institute of Chicago's vast collection. The user interface is designed using Material-UI (MUI) components, which gives the app a sleek and modern look.
 
 When a user visits the app, they are greeted with a random image from the Art Institute of Chicago's collection. They can then click on the "Next Artwork" button to view a new random artwork.
 
