@@ -104,7 +104,7 @@ export default function App() {
           color="primary"
           style={{ marginTop: 5 }}
         >
-          Submit
+          Next Artwork
         </Button>
       </form>
     </Grid>
